@@ -4,14 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unwaller Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { width: 100%; height: 100%; overflow: hidden; }
     canvas { display: block; }
+    .nav-logo {
+      position: fixed;
+      top: 20px;
+      left: 48px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 24px;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      z-index: 100;
+      /* drawn as black pixel on canvas behind it, so this is invisible but clickable */
+      color: transparent;
+    }
   </style>
 </head>
 <body>
   <canvas id="c"></canvas>
+  <a href="https://aweebwoo.vercel.app" class="nav-logo">AWEEBWOO</a>
   <script>
     const canvas = document.getElementById('c');
     const ctx = canvas.getContext('2d');
@@ -24,21 +38,19 @@
       ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Nav logo
+      // Nav logo (drawn on canvas so it stays black)
       ctx.fillStyle = '#000000';
       ctx.font = 'bold 24px sans-serif';
-      ctx.letterSpacing = '0.12em';
       ctx.fillText('AWEEBWOO', 48, 44);
 
       // Body text
       ctx.font = '20px sans-serif';
-      ctx.letterSpacing = '0';
       const lines = [
         'Unwaller:',
         '',
-        '- Unwaller doesn\'t exist idk why you came here. You aren\'t even supposed to',
-        '  be able to get here from the main page, you had to type it manually, why',
-        '  did you type the entire thing manually?',
+        "- Unwaller doesn't exist idk why you came here. You aren't even supposed to",
+        "  be able to get here from the main page, you had to type it manually, why",
+        "  did you type the entire thing manually?",
         '- Also, flashbang.',
       ];
       const startX = canvas.width * 0.17;
