@@ -8,17 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
+    html {
+      -webkit-filter: none !important;
+      filter: none !important;
+      background: #fff !important;
+      color-scheme: light;
+    }
+    body {
       background: #fff !important;
       color: #000 !important;
-      color-scheme: light;
       font-family: sans-serif;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
     .nav-logo {
       position: fixed;
       top: 20px;
